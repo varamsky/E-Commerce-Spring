@@ -1,5 +1,5 @@
 CREATE TABLE `users` (
-  `id` int PRIMARY KEY,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `username` varchar(255) UNIQUE NOT NULL,
   `email` varchar(255) UNIQUE NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `products` (
-  `id` int PRIMARY KEY,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `title` varchar(255) UNIQUE NOT NULL,
   `description` varchar(255),
   `quantity` int,
@@ -25,14 +25,14 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `cart_items` (
-  `id` int PRIMARY KEY,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `quantity` int NOT NULL,
   `product_id` int,
   `user_id` int
 );
 
 CREATE TABLE `order_items` (
-  `id` int PRIMARY KEY,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `quantity` int NOT NULL,
   `price` int NOT NULL,
   `product_id` int,
@@ -40,7 +40,7 @@ CREATE TABLE `order_items` (
 );
 
 CREATE TABLE `orders` (
-  `id` int PRIMARY KEY,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `user_id` int,
   `total` float,
   `created_at` timestamp DEFAULT (now()),

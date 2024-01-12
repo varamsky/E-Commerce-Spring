@@ -53,6 +53,23 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<OrderItem> productOrderItems;
 
+    public Product() {}
+
+    public Product(Integer id, String title, String description, Integer quantity, Double price, String color, String size, Double discount, String category, String slug, OffsetDateTime createdAt, OffsetDateTime modifiedAt) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.quantity = quantity;
+        this.price = price;
+        this.color = color;
+        this.size = size;
+        this.discount = discount;
+        this.category = category;
+        this.slug = slug;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -165,4 +182,21 @@ public class Product {
         this.productOrderItems = productOrderItems;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", color='" + color + '\'' +
+                ", size='" + size + '\'' +
+                ", discount=" + discount +
+                ", category='" + category + '\'' +
+                ", slug='" + slug + '\'' +
+                ", createdAt=" + createdAt +
+                ", modifiedAt=" + modifiedAt +
+                '}';
+    }
 }
